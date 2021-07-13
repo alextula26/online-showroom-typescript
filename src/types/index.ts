@@ -53,6 +53,17 @@ interface StatusType {
   name: string
 }
 
+interface DealershipType {
+  address: string
+  can_support: boolean
+  email: string
+  id: number
+  name: string
+  phone: string
+  phone_mask: string
+  site: string
+}
+
 export interface VehiclesType {
   body_type: string
   brand_id: number
@@ -75,5 +86,34 @@ export interface VehiclesType {
   ref_model_name: string
   special_price: number
   status: StatusType
+  vin: string
+}
+
+export interface VehicleType {
+  additional_equipment_description: null | string
+  additional_options: null | string
+  body_type: string
+  brand_id: number
+  brand_name: string
+  color: string
+  complectation_name: string
+  dealership: DealershipType
+  description: string
+  discounts: null | number
+  equipment: string
+  id: number
+  min_price: number
+  model_id: number
+  model_name: string
+  modification_id: number
+  modification_name: string
+  price: number
+  pts_type: null | number
+  ref_model_id: number
+  ref_model_name: string
+  skin: string
+  special_price: number
+  status: StatusType
+  stock_type: boolean
   vin: string
 }
