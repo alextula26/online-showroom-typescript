@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { VehicleType, VehiclePayloadActionType, LoadingPayloadActionType } from 'types';
+import { VehicleType, NewVehiclePayloadActionType, LoadingPayloadActionType } from 'types';
 
 const initialState = {
   vehicle: {} as VehicleType,
@@ -12,7 +12,7 @@ const newVehicleSlice = createSlice({
   name: 'newVehicle',
   initialState,
   reducers: {
-    addNewVehicle: (state, action: PayloadAction<VehiclePayloadActionType>): InitialStateType => ({
+    addNewVehicle: (state, action: PayloadAction<NewVehiclePayloadActionType>): InitialStateType => ({
       ...state,
       vehicle: action.payload.vehicle,
     }),

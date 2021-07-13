@@ -7,14 +7,24 @@ import {
   getLisFilterItems, getColorsListFilter, getMinPrice, getMaxPrice,
 } from '../utils';
 import getVehicles from './vehicles';
+import * as TYPES from '../types';
 
-export default function* fetchNewVehicles({ payload }) {
+/* interface VehiclesPayloadType {
+  modelId: number
+}
+
+type VehiclesActionPayloadType = {
+  type: typeof TYPES.REQUEST_NEW_VEHICLES,
+  payload: VehiclesPayloadType
+} */
+
+export default function* fetchNewVehicles(action) {
   try {
-    const { items: vehicles, model, brand } = yield call(getVehicles, payload.modelId, CONST.vehiclesTypes.newVehicles, '');
-    const generalListColorsByModel = yield call(API.getModelColor, payload.modelId);
+    const { items: vehicles, model, brand } = yield call(getVehicles, action.payload.modelId, CONST.vehiclesTypes.newVehicles, '');
+    const generalListColorsByModel = yield call(API.getModelColor, action.payload.modelId);
 
     const filterItems = {
-      modelId: payload.modelId,
+      modelId: action.payload.modelId,
       modifications: getLisFilterItems(
         vehicles,
         CONST.vehicleProps.modification.prop,

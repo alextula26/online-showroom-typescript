@@ -22,7 +22,7 @@ export const CHANGE_TRADEIN_VEHICLES_LOADER = 'CHANGE_TRADEIN_VEHICLES_LOADER';
 
 // reducer slices
 export interface LoadingPayloadActionType {
-  loading: boolean,
+  loading: boolean
 }
 
 export interface BrandsPayloadActionType {
@@ -30,12 +30,22 @@ export interface BrandsPayloadActionType {
 }
 
 export interface ModelsPayloadActionType {
-  models: Array<ModelsType>,
-  brand: BrandType,
+  models: Array<ModelsType>
+  brand: BrandType
 }
 
-export interface VehiclePayloadActionType {
+export interface NewVehiclesPayloadActionType {
+  vehicles: Array<VehiclesType>
+  model: ModelType
+  brand: BrandType
+}
+
+export interface NewVehiclePayloadActionType {
   vehicle: VehicleType
+}
+
+export interface TradeInVehiclesPayloadActionType {
+  tradeInVehicles: Array<VehiclesType>
 }
 
 // sagas

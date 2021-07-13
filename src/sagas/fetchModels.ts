@@ -14,7 +14,6 @@ type ModelsActionPayloadType = {
 
 export default function* fetchModels(action: ModelsActionPayloadType) {
   try {
-    console.log(action);
     const { brand, items: models } = yield call(API.getModels, action.payload.brandId);
     yield put(addModels({ models, brand }));
     yield put(changeModelsLoader({ loading: false }));
