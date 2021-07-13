@@ -3,7 +3,7 @@ import {
   BrowserRouter, Switch, Route, Redirect,
 } from 'react-router-dom';
 import { Provider, useSelector, useDispatch } from 'react-redux';
-import store from './redux/store.js';
+import store from './redux/store';
 import * as actions from './actions';
 import { isEmpty } from './utils';
 import Preloader from './components/commons/Preloader';
