@@ -48,6 +48,10 @@ export interface TradeInVehiclesPayloadActionType {
   tradeInVehicles: Array<VehiclesType>
 }
 
+export interface TradeInVehiclePayloadActionType {
+  vehicle: VehicleType
+}
+
 // sagas
 
 export interface ModelsPayloadType {
