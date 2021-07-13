@@ -10,28 +10,28 @@ import getVehicles from './vehicles';
 
 export default function* fetchNewVehicles({ payload }) {
   try {
-    const vehicles = yield call(getVehicles, payload.modelId, CONST.vehiclesTypes.newVehicles, '');
+    const { items: vehicles, model, brand } = yield call(getVehicles, payload.modelId, CONST.vehiclesTypes.newVehicles, '');
     const generalListColorsByModel = yield call(API.getModelColor, payload.modelId);
 
     const filterItems = {
       modelId: payload.modelId,
       modifications: getLisFilterItems(
-        vehicles.items,
+        vehicles,
         CONST.vehicleProps.modification.prop,
         CONST.vehicleProps.modification.name,
       ),
       equipments: getLisFilterItems(
-        vehicles.items,
+        vehicles,
         CONST.vehicleProps.equipment.prop,
         CONST.vehicleProps.equipment.name,
       ),
-      colors: getColorsListFilter(vehicles.items, generalListColorsByModel),
-      minPrice: getMinPrice(vehicles.items, 'price'),
-      maxPrice: getMaxPrice(vehicles.items, 'price'),
+      colors: getColorsListFilter(vehicles, generalListColorsByModel),
+      minPrice: getMinPrice(vehicles, 'price'),
+      maxPrice: getMaxPrice(vehicles, 'price'),
     };
 
     yield put(addFilterItems({ filterItems }));
-    yield put(addNewVehicles({ vehicles }));
+    yield put(addNewVehicles({ vehicles, model, brand }));
     yield put(changeVehiclesLoader({ loading: false }));
   } catch (e) {
     console.log('newVehicles saga', e);

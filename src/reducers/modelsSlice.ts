@@ -1,23 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface BrandType {
-  id: number,
-  name: string,
-}
-
-interface ModelType {
-  body_type: string
-  has_discounts: boolean
-  has_shares: boolean
-  id: number
-  image: string
-  is_hidden: boolean
-  min_price: string
-  name: string
-}
+import { BrandType, ModelsType } from 'types';
 
 interface InitialStateType {
-  models: Array<ModelType>,
+  models: Array<ModelsType>,
   brand: BrandType,
   loading: boolean,
 }

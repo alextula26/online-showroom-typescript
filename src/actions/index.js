@@ -1,6 +1,6 @@
 
 import { createAction } from '@reduxjs/toolkit';
-import * as TYPES from './types';
+import * as TYPES from '../types';
 
 // Action creators for saga requests
 export const requestBrands = createAction(TYPES.REQUEST_BRANDS);

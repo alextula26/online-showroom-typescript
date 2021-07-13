@@ -1,5 +1,5 @@
 import { takeEvery } from 'redux-saga/effects';
-import * as TYPES from '../actions/types';
+import * as TYPES from '../types';
 import fetchBrands from './fetchBrands';
 import fetchModels from './fetchModels';
 import fetchNewVehicles from './fetchNewVehicles';

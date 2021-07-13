@@ -1,14 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface BrandType {
-  id: number,
-  logo: string,
-  name: string,
-  vehicles: number,
-}
+import { BrandsType } from 'types';
 
 interface InitialStateType {
-  brands: Array<BrandType>
+  brands: Array<BrandsType>
 }
 
 const initialState: InitialStateType = {

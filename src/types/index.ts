@@ -19,3 +19,61 @@ export const ADD_FILTER_PRICE = 'ADD_FILTER_PRICE';
 export const CHANGE_MODELS_LOADER = 'CHANGE_MODELS_LOADER';
 export const CHANGE_VEHICLES_LOADER = 'CHANGE_VEHICLES_LOADER';
 export const CHANGE_TRADEIN_VEHICLES_LOADER = 'CHANGE_TRADEIN_VEHICLES_LOADER';
+
+export interface BrandsType {
+  id: number,
+  logo: string,
+  name: string,
+  vehicles: number,
+}
+
+export interface BrandType {
+  id: number,
+  name: string,
+}
+
+export interface ModelType {
+  id: number,
+  name: string,
+}
+
+export interface ModelsType {
+  body_type: string
+  has_discounts: boolean
+  has_shares: boolean
+  id: number
+  image: string
+  is_hidden: boolean
+  min_price: string
+  name: string
+}
+
+interface StatusType {
+  id: number 
+  name: string
+}
+
+export interface VehiclesType {
+  body_type: string
+  brand_id: number
+  brand_name: string
+  color: number
+  color_name: string
+  complectation_name: null | string
+  equipment: number
+  equipment_name: string
+  id: number
+  image: string
+  image_preview: string
+  min_price: number
+  model_id: number
+  model_name: string
+  modification: number
+  modification_name: string
+  price: number
+  ref_model_id: number
+  ref_model_name: string
+  special_price: number
+  status: StatusType
+  vin: string
+}
