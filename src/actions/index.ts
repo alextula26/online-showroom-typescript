@@ -4,7 +4,7 @@ import * as TYPES from '../types';
 
 // Action creators for saga requests
 export const requestBrands = createAction(TYPES.REQUEST_BRANDS);
-export const requestModels = createAction(TYPES.REQUEST_MODELS);
+export const requestModels = createAction<TYPES.ModelsPayloadType>(TYPES.REQUEST_MODELS);
 export const requestNewVehicles = createAction(TYPES.REQUEST_NEW_VEHICLES);
 export const requestNewVehicle = createAction(TYPES.REQUEST_NEW_VEHICLE);
 export const requestTradeInVehicles = createAction(TYPES.REQUEST_TRADEIN_VEHICLES);

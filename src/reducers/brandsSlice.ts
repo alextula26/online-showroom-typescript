@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { BrandsType } from 'types';
+import { BrandsPayloadActionType, BrandsType } from 'types';
 
 const initialState = {
   brands: [] as Array<BrandsType>,
@@ -11,7 +11,7 @@ const brandsSlice = createSlice({
   name: 'brands',
   initialState,
   reducers: {
-    addBrands: (state, action: PayloadAction<InitialStateType>): InitialStateType => (
+    addBrands: (state, action: PayloadAction<BrandsPayloadActionType>): InitialStateType => (
       { ...state, brands: action.payload.brands }
     ),
   },

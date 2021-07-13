@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { VehicleType } from 'types';
+import { LoadingPayloadActionType, VehicleType } from 'types';
 
 const initialState = {
-  vehicle: {} as VehicleType
+  vehicle: {} as VehicleType,
+  loading: true,
 }
 
 type InitialStateType = typeof initialState;
@@ -15,9 +16,14 @@ const tradeInVehicleSlice = createSlice({
       ...state,
       vehicle: action.payload.vehicle,
     }),
+
+    changeTradeInVehicleLoader: (state, action: PayloadAction<LoadingPayloadActionType>): InitialStateType => ({
+      ...state,
+      loading: action.payload.loading,
+    }),        
   },
 });
 
-export const { addTradeInVehicle } = tradeInVehicleSlice.actions;
+export const { addTradeInVehicle, changeTradeInVehicleLoader } = tradeInVehicleSlice.actions;
 
 export default tradeInVehicleSlice.reducer;

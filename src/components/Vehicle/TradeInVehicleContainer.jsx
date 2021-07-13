@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import TradeInVehicle from './TradeInVehicle';
-import { isEmpty } from '../../utils';
+import Preloader from '../commons/Preloader';
 import CONST from '../../utils/const';
 
 class TradeInVehicleContainer extends React.Component {
@@ -20,10 +20,10 @@ class TradeInVehicleContainer extends React.Component {
   }
 
   render() {
-    const { vehicle } = this.props;
+    const { vehicle, loading } = this.props;
 
-    if (isEmpty(vehicle)) {
-      return null;
+    if (loading) {
+      return <Preloader />;
     }
 
     return (
@@ -34,6 +34,7 @@ class TradeInVehicleContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
   vehicle: state.tradeInVehiclePage.vehicle,
+  loading: state.tradeInVehiclePage.loading,
 });
 
 const actionCreators = ({

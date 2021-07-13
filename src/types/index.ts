@@ -20,6 +20,32 @@ export const CHANGE_MODELS_LOADER = 'CHANGE_MODELS_LOADER';
 export const CHANGE_VEHICLES_LOADER = 'CHANGE_VEHICLES_LOADER';
 export const CHANGE_TRADEIN_VEHICLES_LOADER = 'CHANGE_TRADEIN_VEHICLES_LOADER';
 
+// reducer slices
+export interface LoadingPayloadActionType {
+  loading: boolean,
+}
+
+export interface BrandsPayloadActionType {
+  brands: Array<BrandsType>
+}
+
+export interface ModelsPayloadActionType {
+  models: Array<ModelsType>,
+  brand: BrandType,
+}
+
+export interface VehiclePayloadActionType {
+  vehicle: VehicleType
+}
+
+// sagas
+
+export interface ModelsPayloadType {
+  brandId: number
+}
+
+// commons 
+
 export interface BrandsType {
   id: number,
   logo: string,
