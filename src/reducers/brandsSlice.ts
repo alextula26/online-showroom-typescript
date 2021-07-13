@@ -13,7 +13,9 @@ const brandsSlice = createSlice({
   name: 'brands',
   initialState,
   reducers: {
-    addBrands: (state, action: PayloadAction<InitialStateType>) => ({ ...state, brands: action.payload.brands }),
+    addBrands: (state, action: PayloadAction<InitialStateType>): InitialStateType => (
+      { ...state, brands: action.payload.brands }
+    ),
   },
 });
 

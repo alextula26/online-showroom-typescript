@@ -19,14 +19,14 @@ const newVehiclesSlice = createSlice({
   name: 'newVehicles',
   initialState,
   reducers: {
-    addNewVehicles: (state, action: PayloadAction<InitialStateType>) => ({
+    addNewVehicles: (state, action: PayloadAction<InitialStateType>): InitialStateType => ({
       ...state,
       vehicles: action.payload.vehicles,
       model: action.payload.model,
       brand: action.payload.brand,
     }),
 
-    changeVehiclesLoader: (state, action: PayloadAction<InitialStateType>) => ({
+    changeVehiclesLoader: (state, action: PayloadAction<InitialStateType>): InitialStateType => ({
       ...state,
       loading: action.payload.loading,
     }),
