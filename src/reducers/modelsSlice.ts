@@ -1,29 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { BrandType, ModelsType } from 'types';
 
-interface InitialStateType {
-  models: Array<ModelsType>,
-  brand: BrandType,
-  loading: boolean,
-}
-
-const initialState: InitialStateType = {
-  models: [],
+const initialState = {
+  models: [] as Array<ModelsType>,
   brand: {} as BrandType,
   loading: true,
 }
+
+type InitialStateType = typeof initialState;
 
 const modelsSlice = createSlice({
   name: 'models',
   initialState,
   reducers: {
-    addhModels: (state: InitialStateType, action: PayloadAction<InitialStateType>): InitialStateType => ({
+    addhModels: (state, action: PayloadAction<InitialStateType>): InitialStateType => ({
       ...state,
       models: action.payload.models,
       brand: action.payload.brand,
     }),
 
-    changeModelsLoader: (state: InitialStateType, action: PayloadAction<InitialStateType>): InitialStateType => ({
+    changeModelsLoader: (state, action: PayloadAction<InitialStateType>): InitialStateType => ({
       ...state,
       loading: action.payload.loading,
     }),
