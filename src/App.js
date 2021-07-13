@@ -20,8 +20,6 @@ const App = (props) => {
   const brands = useSelector((state) => state.brands.brands);
   const dispatch = useDispatch();
 
-  console.log('brands', brands);
-
   useEffect(() => {
     dispatch(actions.requestBrands());
   }, [dispatch]);

@@ -4,8 +4,8 @@ import API from '../api';
 
 export default function* fetchModels({ payload }) {
   try {
-    const models = yield call(API.getModels, payload.brandId);
-    yield put(addhModels({ models }));
+    const { brand, items } = yield call(API.getModels, payload.brandId);
+    yield put(addhModels({ models: items, brand }));
     yield put(changeModelsLoader({ loading: false }));
   } catch (e) {
     console.log(e);

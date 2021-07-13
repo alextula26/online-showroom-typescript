@@ -21,9 +21,7 @@ const API = {
     instance.get(routes.dealers()).then((responce) => responce.data)
   ),
   getBrands: () => (
-    instance.get(routes.brands()).then((responce) => {
-      console.log('responce', responce.data.items);
-      return responce.data.items})
+    instance.get(routes.brands()).then((responce) => responce.data.items)
   ),
   getModels: (brandId) => (
     instance.get(routes.models(brandId)).then((responce) => responce.data)

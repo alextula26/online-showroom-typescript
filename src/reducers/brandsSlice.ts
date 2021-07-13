@@ -11,9 +11,9 @@ interface InitialStateType {
   brands: Array<BrandType>
 }
 
-const initialState = {
+const initialState: InitialStateType = {
   brands: [],
-} as InitialStateType;
+}
 
 const brandsSlice = createSlice({
   name: 'brands',
