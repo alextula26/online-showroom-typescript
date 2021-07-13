@@ -17,13 +17,13 @@ const modelsSlice = createSlice({
   name: 'models',
   initialState,
   reducers: {
-    addhModels: (state, action: PayloadAction<InitialStateType>): InitialStateType => ({
+    addhModels: (state: InitialStateType, action: PayloadAction<InitialStateType>): InitialStateType => ({
       ...state,
       models: action.payload.models,
       brand: action.payload.brand,
     }),
 
-    changeModelsLoader: (state, action: PayloadAction<InitialStateType>): InitialStateType => ({
+    changeModelsLoader: (state: InitialStateType, action: PayloadAction<InitialStateType>): InitialStateType => ({
       ...state,
       loading: action.payload.loading,
     }),
